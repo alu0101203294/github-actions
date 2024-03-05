@@ -12,6 +12,6 @@ describe("add function tests", () => {
   });
 
   it("add(7, 8) returns value 15", () => {
-    expect(add(7, 8)).to.be.equal(18);
+    expect(add(7, 8)).to.be.equal(15);
   });
 });
