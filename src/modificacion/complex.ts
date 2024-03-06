@@ -1,4 +1,11 @@
 import { Arithmeticable } from '../modificacion/interface';
+/**
+ * Colección de elementos que implementan la interfaz Arithmeticable
+ * @export
+ * @class ArithmeticableCollection
+ * @template T
+ * 
+ */
 export class Complex implements Arithmeticable<Complex> {
     constructor(private _real: number, private _imaginary: number) {}
   

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.5% </span>
+                <span class="strong">88.88% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/8</span>
+                <span class='fraction'>8/9</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.5% </span>
+                <span class="strong">88.88% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/8</span>
+                <span class='fraction'>8/9</span>
             </div>
         
             
@@ -100,7 +100,17 @@
 <a name='L35'></a><a href='#L35'>35</a>
 <a name='L36'></a><a href='#L36'>36</a>
 <a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -113,24 +123,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -140,7 +146,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Complex } from '../modificacion/complex';
 import { Rational } from '../modificacion/rational';
 import { Arithmeticable } from '../modificacion/interface';
-&nbsp;
+/**
+ * Adaptador que permite que los números racionales se comporten como números complejos
+ * Implementa la interfaz Arithmeticable&lt;Complex&gt; para que los números racionales puedan ser operados como números complejos
+ * @export
+ * @class RationalToComplexAdapter
+ * @implements {Arithmeticable&lt;Complex&gt;}
+ * 
+ */
 export class RationalToComplexAdapter implements Arithmeticable&lt;Complex&gt; {
     private rational: Rational;
   
@@ -149,28 +162,24 @@ export class RationalToComplexAdapter implements Arithmeticable&lt;Complex&gt; {
     }
   
     toComplex(): Complex {
-      // Convertir el número racional a un número complejo
-      // Usar el numerador como la parte real y establecer la parte imaginaria en cero
-      return new Complex(this.rational.numerator, 0);
+      // Convertir el número racional a un número complejo (Usar el numerador como la parte real y establecer la parte imaginaria en cero)
+      const racional = this.rational.numerator/this.rational.denominator;
+      return new Complex(racional, 0);
     }
   
     add(other: Complex): Complex {
-      // Convertir el número racional a un número complejo y realizar la operación de suma
       return this.toComplex().add(other);
     }
   
     subtract(other: Complex): Complex {
-      // Convertir el número racional a un número complejo y realizar la operación de resta
       return this.toComplex().subtract(other);
     }
   
     multiply(other: Complex): Complex {
-      // Convertir el número racional a un número complejo y realizar la operación de multiplicación
       return this.toComplex().multiply(other);
     }
   
 <span class="fstat-no" title="function not covered" >    divide(</span>other: Complex): Complex {
-      // Convertir el número racional a un número complejo y realizar la operación de división
 <span class="cstat-no" title="statement not covered" >      return this.toComplex().divide(other);</span>
     }
   }
@@ -181,7 +190,7 @@ export class RationalToComplexAdapter implements Arithmeticable&lt;Complex&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-03-06T10:41:14.247Z
+                at 2024-03-06T11:03:37.668Z
             </div>
         <script src="prettify.js"></script>
         <script>

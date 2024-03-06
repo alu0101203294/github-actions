@@ -1,5 +1,12 @@
 import { Arithmeticable } from "../modificacion/interface";
-
+/**
+ * Clase que representa un número racional
+ * Implementa la interfaz Arithmeticable<Rational> para que los números racionales puedan ser operados como números racionales
+ * @export
+ * @class Rational
+ * @implements {Arithmeticable<Rational>}
+ * 
+ */
 export class Rational implements Arithmeticable<Rational> {
     constructor(private _numerator: number, private _denominator: number) {
       if (_denominator === 0) {

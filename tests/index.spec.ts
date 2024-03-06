@@ -5,6 +5,8 @@ import { Rational } from "../src/modificacion/rational";
 import { RationalToComplexAdapter } from "../src/modificacion/adapter";
 import { ArithmeticableCollection } from "../src/modificacion/arithmeticableCollection";
 
+
+context('Modificacion', () => {
 describe('ArithmeticableCollection', () => {
   it('should add arithmeticable elements', () => {
     const collection = new ArithmeticableCollection<Complex>();
@@ -91,7 +93,7 @@ describe('RationalToComplexAdapter', () => {
     const rational = new Rational(5, 3);
     const adapter = new RationalToComplexAdapter(rational);
     const result = adapter.toComplex();
-    expect(result.getReal()).to.equal(5);
+    expect(result.getReal()).to.equal(1.6666666666666667);
     expect(result.getImaginary()).to.equal(0);
   });
 
@@ -100,7 +102,7 @@ describe('RationalToComplexAdapter', () => {
     const complex = new Complex(2, 1);
     const adapter = new RationalToComplexAdapter(rational);
     const result = adapter.add(complex);
-    expect(result.getReal()).to.equal(7);
+    expect(result.getReal()).to.equal(3.666666666666667);
     expect(result.getImaginary()).to.equal(1);
   });
 
@@ -109,7 +111,7 @@ describe('RationalToComplexAdapter', () => {
     const complex = new Complex(2, 1);
     const adapter = new RationalToComplexAdapter(rational);
     const result = adapter.subtract(complex);
-    expect(result.getReal()).to.equal(3);
+    expect(result.getReal()).to.equal(-0.33333333333333326);
     expect(result.getImaginary()).to.equal(-1);
   });
 
@@ -118,8 +120,9 @@ describe('RationalToComplexAdapter', () => {
     const complex = new Complex(2, 1);
     const adapter = new RationalToComplexAdapter(rational);
     const result = adapter.multiply(complex);
-    expect(result.getReal()).to.equal(10);
-    expect(result.getImaginary()).to.equal(5);
+    expect(result.getReal()).to.equal(3.3333333333333335);
+    expect(result.getImaginary()).to.equal(1.6666666666666667);
   });
 
+});
 });

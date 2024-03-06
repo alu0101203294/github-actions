@@ -1,4 +1,11 @@
 import { Arithmeticable } from '../modificacion/interface';
+/**
+ * Colección de elementos que implementan la interfaz Arithmeticable
+ * @export
+ * @class ArithmeticableCollection
+ * @template T
+ * 
+ */
 export class ArithmeticableCollection<T extends Arithmeticable<T>> {
     private elements: T[];
   
@@ -16,4 +23,4 @@ export class ArithmeticableCollection<T extends Arithmeticable<T>> {
     getNumberOfArithmeticables(): number {
         return this.elements.length;
     }
-  }
+  } 
